@@ -103,3 +103,11 @@ In your repository `$/rust-wasm/wasm-game-of-life`, listed below are the relevan
     ├── package.json # pre configured webpack dependencies
     └── webpack.config.js # pre configured local dev server
 ```
+
+## Key Takeaways
+
+* WebAssembly has a linear memory space, where the Rust values live
+* JavaScripts garbage-collected heap is distinc from this linear region
+* WebAssembly has no direct access to JavaScript's heap
+* JavaScript can however read WebAssembly's linear region with `ArrayBuffer` (key for COM between both)
+
