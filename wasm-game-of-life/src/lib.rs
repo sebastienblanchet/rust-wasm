@@ -8,12 +8,16 @@ use wasm_bindgen::prelude::*; // interface for javascript
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
+// window.alert JavaScript function
 #[wasm_bindgen]
 extern {
+    // import this function from javascript
     fn alert(s: &str);
 }
 
+//Define your own personal methods
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, wasm-game-of-life!");
+pub fn greet(s: &str) {
+    // string format
+    alert(&format!("Hello, {}!", s));
 }
